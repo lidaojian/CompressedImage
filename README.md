@@ -7,7 +7,7 @@
 
 #### 如何使用
 
-1.首先把申请TinyPNG的压缩Key值 网址[https://tinypng.com] 利用邮箱申请但是免费压缩图片数为500张;
+1.首先利用邮箱申请TinyPNG的key ，但是免费压缩图片数为500张  [TinyPNG](https://tinypng.com/developers);
 
 2.把startCompress.py、compressPng.py、startDate.txt三个文件放到工程目录下;
 
@@ -15,15 +15,12 @@
 执行如下命令即可
 
 ```python
-  python startCompress.py
+python startCompress.py
 ```
 备注:startCompress.py 是入口脚本，compressPng.py 真正的压缩脚本(包含过滤git提交记录) startDate.txt 记录压缩时间的文件。
 
 #### 适用平台
 
 iOS & Android
-
-
-
 
 
