@@ -54,7 +54,6 @@ def compress_file(inputFile, width):
 
 #root directory
 def compressPngStartDate(startDate, branchName):
-	print("into compressPngStartDate function----------------%s", startDate)
 	os.system('git rev-parse --abbrev-ref HEAD')
 	rootdir=os.getcwd()
 	os.system('git log --name-status --since=\"'+ startDate +'\" > gitlog.txt')
@@ -84,7 +83,7 @@ def compressPngStartDate(startDate, branchName):
 			#虽然是Add 但是防止Add之后又Delete此时这个图片是不存在的
 			if os.path.isfile(pngPath):
 				print(pngPath)
-				# compress_file(pngPath, -1)
+				compress_file(pngPath, -1)
 		elif (gitlogLine.find("M	") != -1 and gitlogLine.find(".png") != -1):
 			#Modify Png
 			pngPath=rootdir+"/"+gitlogLine[2:]
@@ -92,7 +91,7 @@ def compressPngStartDate(startDate, branchName):
 			#虽然是Modify 但是防止Modify之后又Delete此时这个图片是不存在的
 			if os.path.isfile(pngPath):
 				print(pngPath)
-				# compress_file(pngPath, -1)
+				compress_file(pngPath, -1)
 	os.remove(rootdir+'/gitlog.txt')
 	os.remove(rootdir+'/filterLog.txt')
 	if (compressPngCount):
